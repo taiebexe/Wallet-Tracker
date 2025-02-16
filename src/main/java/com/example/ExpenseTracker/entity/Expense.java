@@ -1,27 +1,22 @@
 package com.example.ExpenseTracker.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.Data;
-import jakarta.persistence.GenerationType;
-
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import java.time.LocalDate;
 
 @Entity
-@Data
-
-
-
+@Getter  // ✅ Generates getters automatically
+@Setter  // ✅ Generates setters automatically
 public class Expense {
 
-
     @Id
-    @GeneratedValue
-    private  Long id;
-    private String title;
-    private String description;
-    private String category;
-    private LocalDate date;
-    private Integer amount;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title;      // ✅ Ensure this exists
+    private String category;   // ✅ Ensure this exists
+    private Double amount;     // ✅ Ensure this exists
+    private LocalDate date;    // ✅ Ensure this exists
+    private String description; // ✅ Ensure this exists
 }
