@@ -21,10 +21,9 @@ public class ExpenseServiceImplementation implements ExpenseService {
         Expense expense = new Expense();
         expense.setTitle(expenseDTO.getTitle());
         expense.setCategory(expenseDTO.getCategory());
-        expense.setAmount(expenseDTO.getAmount().doubleValue());  // ✅ FIXED
+        expense.setAmount(expenseDTO.getAmount().doubleValue());  // Convert Integer to Double
         expense.setDate(expenseDTO.getDate());
         expense.setDescription(expenseDTO.getDescription());
         return expenseRepository.save(expense);
     }
-
 }

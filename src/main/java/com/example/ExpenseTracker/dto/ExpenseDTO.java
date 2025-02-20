@@ -1,4 +1,5 @@
 package com.example.ExpenseTracker.dto;
+
 import lombok.Data;
 import java.time.LocalDate;
 
@@ -8,8 +9,6 @@ public class ExpenseDTO {
     private String title;
     private String description;
     private String category;
-
     private LocalDate date;
-
     private Integer amount;
 }
